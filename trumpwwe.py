@@ -9,18 +9,11 @@ import random
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 #time to clean this up for server use
-def get_args():
-        """
-        :return:
-        """
-        parser = argparse.ArgumentParser(description='Arguments took to process the cleanup script')
 
-        parser.add_argument('--imageid',
-                            help='hostname. eg. artifactory.local')
-        return parser.parse_args()
 def main():
-    args = get_args()
-    id = args.imageid()
+    #args = get_args()
+    id = sys.argv[1]
+	
     # alternative algorithms
     # BOOSTING, KCF, TLD, MEDIANFLOW or GOTURN
     #MEDIANFLOW seems to be the fastest and most accurate for occlusions of dude's face
@@ -72,7 +65,7 @@ def main():
     #now we generate gif
 
     kargs =  {"duration" : .02}
-    with imageio.get_writer('movie.gif', mode='I', **kargs) as writer:
+    with imageio.get_writer('./public/gifs/'+id +'.gif', mode='I', **kargs) as writer:
         # for filename in sorted(os.listdir("./frames"), key= lambda x : int(x.split(".")[0])):
         #     image = imageio.imread("./frames/" + filename)
         #     writer.append_data(image)
