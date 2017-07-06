@@ -9,10 +9,8 @@ var bodyParser = require('body-parser');
 var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
 var fs = require('fs');
+var PythonShell = require('python-shell');
 app.use(express.static('public'))
-
-// ----
-var sessions = {};
 
 //Auth ----
 var storage = multer.diskStorage({
@@ -24,8 +22,8 @@ var storage = multer.diskStorage({
   }
 })
 
-var upload = multer({ storage: storage });
 
+var upload = multer({ storage: storage });
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -37,10 +35,19 @@ app.get('/', function(req, res){
 });
 
 app.post('/upload', upload.single('image'), function (req, res, next) {
-    
     var filename = req.file.filename;
 
-
+    var options = {
+        pythonPath: 'C:/Python27/python.exe',
+        args: [filename.toString().substr(0,filename.toString().indexOf('.'))]
+    };
+    PythonShell.run('trumpwwe.py' , options, function (err, results) {
+        if (err) {
+            console.log(err);
+        }
+        // results is an array consisting of messages collected during execution 
+        console.log('results: %j', results);
+    });
 
 }); 
 
