@@ -36,7 +36,7 @@ app.get('/', function(req, res){
 
 app.post('/upload', upload.single('image'), function (req, res, next) {
     var filename = req.file.filename;
-
+    console.log("processing file " + filename);
     var options = {
         pythonPath: 'C:/Python27/python.exe',
         args: [filename.toString().substr(0,filename.toString().indexOf('.'))]
