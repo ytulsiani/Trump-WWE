@@ -2,16 +2,25 @@ import cv2
 import sys
 import imageio
 import os
-
+import argparse
 import string
 import random
 
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 #time to clean this up for server use
+def get_args():
+        """
+        :return:
+        """
+        parser = argparse.ArgumentParser(description='Arguments took to process the cleanup script')
 
-if __name__ == '__main__':
-
+        parser.add_argument('--imageid',
+                            help='hostname. eg. artifactory.local')
+        return parser.parse_args()
+def main():
+    args = get_args()
+    id = args.imageid()
     # alternative algorithms
     # BOOSTING, KCF, TLD, MEDIANFLOW or GOTURN
     #MEDIANFLOW seems to be the fastest and most accurate for occlusions of dude's face
@@ -29,8 +38,8 @@ if __name__ == '__main__':
     if not ok:
         print('Cannot read video file')
         sys.exit()
-
-    my_img = cv2.imread("yashface.png")
+    imageLoc = "./uploads/" + id + ".jpg"
+    my_img = cv2.imread(imageLoc)
 
     # what it starts tracking, from the first frame
     #dude's face
@@ -70,3 +79,5 @@ if __name__ == '__main__':
         for image in img_list:
 
             writer.append_data(image)
+if __name__ == '__main__':
+    main()
