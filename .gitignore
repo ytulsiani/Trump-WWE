@@ -1,7 +1,8 @@
 frames/
-node_modules/
 .idea/
 movie.gif
 requirements.txt
 venv/
 uploads/
+public/
+node_modules/
