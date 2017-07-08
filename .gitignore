@@ -1,7 +1,6 @@
 frames/
 .idea/
 movie.gif
-requirements.txt
 venv/
 uploads/
 public/
