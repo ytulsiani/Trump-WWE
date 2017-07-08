@@ -4,7 +4,6 @@
   "description": "Makes trump gifs",
   "main": "app.js",
   "scripts": {
-    "heroku-prebuild": "pip install -r requirements.txt",
     "start": "node app.js"
   },
   "repository": {
