@@ -38,18 +38,18 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
     var filename = req.file.filename;
 
     var options = {
-        pythonPath: 'C:/Python27/python.exe',
+        //pythonPath: 'C:/Python27/python.exe',
         args: [filename.toString().substr(0,filename.toString().indexOf('.'))]
     };
     PythonShell.run('trumpwwe.py' , options, function (err, results) {
         if (err) {
             console.log(err);
         }
-        // results is an array consisting of messages collected during execution 
+        // results is an array consisting of messages collected during execution
         console.log('results: %j', results);
     });
 
-}); 
+});
 
 io.on('connection', function(socket) {
   console.log("Client connect at " + socket.id);
@@ -60,7 +60,7 @@ io.on('connection', function(socket) {
   socket.on('disconnect', function(item) {
     console.log("disconnected from client " + socket.id);
     delete sessions[socket.id];
-    //update dashboard sockets 
+    //update dashboard sockets
   });
 
   socket.on('broadcastDraw', function(data){
@@ -75,5 +75,3 @@ io.on('connection', function(socket) {
 server.listen(port, function () {
   console.log("server running on port: " + port.toString())
 })
-
-

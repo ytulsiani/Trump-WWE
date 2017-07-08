@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/ytulsiani/Trump-WWE#readme",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "multer": "^1.3.0",
     "python-shell": "^0.4.0",

@@ -1,1 +1,7 @@
 frames/
+node_modules/
+.idea/
+movie.gif
+requirements.txt
+venv/
+uploads/

@@ -13,14 +13,14 @@ def get_args():
         """
         :return:
         """
-        parser = argparse.ArgumentParser(description='Arguments took to process the cleanup script')
+        parser = argparse.ArgumentParser(description='Arguments took to add the image to the video')
 
         parser.add_argument('--imageid',
-                            help='hostname. eg. artifactory.local')
+                            help='Unique image identifier')
         return parser.parse_args()
 def main():
     args = get_args()
-    id = args.imageid()
+    id = args.imageid
     # alternative algorithms
     # BOOSTING, KCF, TLD, MEDIANFLOW or GOTURN
     #MEDIANFLOW seems to be the fastest and most accurate for occlusions of dude's face
@@ -40,6 +40,7 @@ def main():
         sys.exit()
     imageLoc = "./uploads/" + id + ".jpg"
     my_img = cv2.imread(imageLoc)
+    print('image upload')
 
     # what it starts tracking, from the first frame
     #dude's face
