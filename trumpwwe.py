@@ -10,13 +10,13 @@ import random
 def main():
     #args = get_args()
     id = sys.argv[1]
-	
+
     # alternative algorithms
     # BOOSTING, KCF, TLD, MEDIANFLOW or GOTURN
     #MEDIANFLOW seems to be the fastest and most accurate for occlusions of dude's face
     tracker = cv2.Tracker_create("MEDIANFLOW")
     # Read video
-    video = cv2.VideoCapture("vid1.mp4")
+    video = cv2.VideoCapture("vid1.avi")
 
     # Exit if video not opened.
     if not video.isOpened():
