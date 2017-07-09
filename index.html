@@ -8,11 +8,77 @@
 	<link href="css/materialize.css" media="screen,projection" rel="stylesheet" type="text/css">
 	<link href="css/style.css" media="screen,projection" rel="stylesheet" type="text/css">
 	<style>
-        html,body {
-         
-            height:100%;
+        /*loader*/
+       .loader {
+  margin: 100px auto;
+  font-size: 25px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load5 1.1s infinite ease;
+  animation: load5 1.1s infinite ease;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+@-webkit-keyframes load5 {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #b6b6b6, 1.8em -1.8em 0 0em rgba(182,182,182, 0.2), 2.5em 0em 0 0em rgba(182,182,182, 0.2), 1.75em 1.75em 0 0em rgba(182,182,182, 0.2), 0em 2.5em 0 0em rgba(182,182,182, 0.2), -1.8em 1.8em 0 0em rgba(182,182,182, 0.2), -2.6em 0em 0 0em rgba(182,182,182, 0.5), -1.8em -1.8em 0 0em rgba(182,182,182, 0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.7), 1.8em -1.8em 0 0em #b6b6b6, 2.5em 0em 0 0em rgba(182,182,182, 0.2), 1.75em 1.75em 0 0em rgba(182,182,182, 0.2), 0em 2.5em 0 0em rgba(182,182,182, 0.2), -1.8em 1.8em 0 0em rgba(182,182,182, 0.2), -2.6em 0em 0 0em rgba(182,182,182, 0.2), -1.8em -1.8em 0 0em rgba(182,182,182, 0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.5), 1.8em -1.8em 0 0em rgba(182,182,182, 0.7), 2.5em 0em 0 0em #b6b6b6, 1.75em 1.75em 0 0em rgba(182,182,182, 0.2), 0em 2.5em 0 0em rgba(182,182,182, 0.2), -1.8em 1.8em 0 0em rgba(182,182,182, 0.2), -2.6em 0em 0 0em rgba(182,182,182, 0.2), -1.8em -1.8em 0 0em rgba(182,182,182, 0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.2), 1.8em -1.8em 0 0em rgba(182,182,182, 0.5), 2.5em 0em 0 0em rgba(182,182,182, 0.7), 1.75em 1.75em 0 0em #b6b6b6, 0em 2.5em 0 0em rgba(182,182,182, 0.2), -1.8em 1.8em 0 0em rgba(182,182,182, 0.2), -2.6em 0em 0 0em rgba(182,182,182, 0.2), -1.8em -1.8em 0 0em rgba(182,182,182, 0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.2), 1.8em -1.8em 0 0em rgba(182,182,182, 0.2), 2.5em 0em 0 0em rgba(182,182,182, 0.5), 1.75em 1.75em 0 0em rgba(182,182,182, 0.7), 0em 2.5em 0 0em #b6b6b6, -1.8em 1.8em 0 0em rgba(182,182,182, 0.2), -2.6em 0em 0 0em rgba(182,182,182, 0.2), -1.8em -1.8em 0 0em rgba(182,182,182, 0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.2), 1.8em -1.8em 0 0em rgba(182,182,182, 0.2), 2.5em 0em 0 0em rgba(182,182,182, 0.2), 1.75em 1.75em 0 0em rgba(182,182,182, 0.5), 0em 2.5em 0 0em rgba(182,182,182, 0.7), -1.8em 1.8em 0 0em #b6b6b6, -2.6em 0em 0 0em rgba(182,182,182, 0.2), -1.8em -1.8em 0 0em rgba(182,182,182, 0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.2), 1.8em -1.8em 0 0em rgba(182,182,182, 0.2), 2.5em 0em 0 0em rgba(182,182,182, 0.2), 1.75em 1.75em 0 0em rgba(182,182,182, 0.2), 0em 2.5em 0 0em rgba(182,182,182, 0.5), -1.8em 1.8em 0 0em rgba(182,182,182, 0.7), -2.6em 0em 0 0em #b6b6b6, -1.8em -1.8em 0 0em rgba(182,182,182, 0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.2), 1.8em -1.8em 0 0em rgba(182,182,182, 0.2), 2.5em 0em 0 0em rgba(182,182,182, 0.2), 1.75em 1.75em 0 0em rgba(182,182,182, 0.2), 0em 2.5em 0 0em rgba(182,182,182, 0.2), -1.8em 1.8em 0 0em rgba(182,182,182, 0.5), -2.6em 0em 0 0em rgba(182,182,182, 0.7), -1.8em -1.8em 0 0em #b6b6b6;
+  }
+}
+@keyframes load5 {
+  0%,
+  100% {
+    box-shadow: 0em -2.6em 0em 0em #b6b6b6, 1.8em -1.8em 0 0em rgba(182,182,182, 0.2), 2.5em 0em 0 0em rgba(182,182,182, 0.2), 1.75em 1.75em 0 0em rgba(182,182,182, 0.2), 0em 2.5em 0 0em rgba(182,182,182, 0.2), -1.8em 1.8em 0 0em rgba(182,182,182, 0.2), -2.6em 0em 0 0em rgba(182,182,182, 0.5), -1.8em -1.8em 0 0em rgba(182,182,182, 0.7);
+  }
+  12.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.7), 1.8em -1.8em 0 0em #b6b6b6, 2.5em 0em 0 0em rgba(182,182,182, 0.2), 1.75em 1.75em 0 0em rgba(182,182,182, 0.2), 0em 2.5em 0 0em rgba(182,182,182, 0.2), -1.8em 1.8em 0 0em rgba(182,182,182, 0.2), -2.6em 0em 0 0em rgba(182,182,182, 0.2), -1.8em -1.8em 0 0em rgba(182,182,182, 0.5);
+  }
+  25% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.5), 1.8em -1.8em 0 0em rgba(182,182,182, 0.7), 2.5em 0em 0 0em #b6b6b6, 1.75em 1.75em 0 0em rgba(182,182,182, 0.2), 0em 2.5em 0 0em rgba(182,182,182, 0.2), -1.8em 1.8em 0 0em rgba(182,182,182, 0.2), -2.6em 0em 0 0em rgba(182,182,182, 0.2), -1.8em -1.8em 0 0em rgba(182,182,182, 0.2);
+  }
+  37.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.2), 1.8em -1.8em 0 0em rgba(182,182,182, 0.5), 2.5em 0em 0 0em rgba(182,182,182, 0.7), 1.75em 1.75em 0 0em #b6b6b6, 0em 2.5em 0 0em rgba(182,182,182, 0.2), -1.8em 1.8em 0 0em rgba(182,182,182, 0.2), -2.6em 0em 0 0em rgba(182,182,182, 0.2), -1.8em -1.8em 0 0em rgba(182,182,182, 0.2);
+  }
+  50% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.2), 1.8em -1.8em 0 0em rgba(182,182,182, 0.2), 2.5em 0em 0 0em rgba(182,182,182, 0.5), 1.75em 1.75em 0 0em rgba(182,182,182, 0.7), 0em 2.5em 0 0em #b6b6b6, -1.8em 1.8em 0 0em rgba(182,182,182, 0.2), -2.6em 0em 0 0em rgba(182,182,182, 0.2), -1.8em -1.8em 0 0em rgba(182,182,182, 0.2);
+  }
+  62.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.2), 1.8em -1.8em 0 0em rgba(182,182,182, 0.2), 2.5em 0em 0 0em rgba(182,182,182, 0.2), 1.75em 1.75em 0 0em rgba(182,182,182, 0.5), 0em 2.5em 0 0em rgba(182,182,182, 0.7), -1.8em 1.8em 0 0em #b6b6b6, -2.6em 0em 0 0em rgba(182,182,182, 0.2), -1.8em -1.8em 0 0em rgba(182,182,182, 0.2);
+  }
+  75% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.2), 1.8em -1.8em 0 0em rgba(182,182,182, 0.2), 2.5em 0em 0 0em rgba(182,182,182, 0.2), 1.75em 1.75em 0 0em rgba(182,182,182, 0.2), 0em 2.5em 0 0em rgba(182,182,182, 0.5), -1.8em 1.8em 0 0em rgba(182,182,182, 0.7), -2.6em 0em 0 0em #b6b6b6, -1.8em -1.8em 0 0em rgba(182,182,182, 0.2);
+  }
+  87.5% {
+    box-shadow: 0em -2.6em 0em 0em rgba(182,182,182, 0.2), 1.8em -1.8em 0 0em rgba(182,182,182, 0.2), 2.5em 0em 0 0em rgba(182,182,182, 0.2), 1.75em 1.75em 0 0em rgba(182,182,182, 0.2), 0em 2.5em 0 0em rgba(182,182,182, 0.2), -1.8em 1.8em 0 0em rgba(182,182,182, 0.5), -2.6em 0em 0 0em rgba(182,182,182, 0.7), -1.8em -1.8em 0 0em #b6b6b6;
+  }
+}
 
-        }
+        /*loader end*/
 	   .navlogo {
 	     margin-top: 10px;
 	     max-width: 3rem;
@@ -26,23 +92,26 @@
            margin-top: 25%;
        }
 
+       .row.upload {
+           margin-top: 25%;
+       }
+
+       .row .col.res {
+           padding-bottom: 1rem;
+       }
+       .row.result {
+           margin-top: 5%;
+       }
+
        
 	</style>
 </head>
 <body class="grey lighten-3">
-	<nav class="grey z-depth-3" role="navigation">
-		<div class="nav-wrapper container">
-			<a class="brand-logo  white-text" href="#" id="logo-container">Gif</a>
-			<ul class="right navlink hide-on-med-and-down white-text">
-				
-			</ul>
-			<a class="button-collapse white-text" data-activates="nav-mobile" href="#"><i class="material-icons">menu</i></a>
-		</div>
-	</nav>
+	
 	
 	<div class="container main">
 	<div class="row upload">
-    <div class="section col s4 offset-s4">
+    <div class="section col s12 l4 offset-l4">
         <form action="#">
             <div class="file-field input-field">
             <div class="grey btn">
@@ -61,16 +130,16 @@
 			
     </div>
     </div>  
+    <div class="row submit">
+     
+            <a class="waves-effect waves-light grey btn-large col s12 l4 offset-l4 submitgif">Put it in the ring!</a>
 
-	</div>
-	<footer class="page-footer grey">
-		<div class="container"></div>
-		<div class="footer-copyright">
-			<div class="container">
-				© 2017 Me
-			</div>
-		</div>
-	</footer><!--  Scripts-->
+    </div>
+    <div class = "row result">
+    
+    </div>
+    </div>
+	
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js">
 	</script> 
 	<script src="js/materialize.js">
@@ -81,10 +150,21 @@
     <script>
         
          $(".file-field input[type=file]").first().change(function() {
-            uploadImage();
             
+            return null;    
         });
-    
+        $(".submitgif").click(function() {
+            uploadImage();
+            $(".container").html("<div class='row upload'><div class='loader'>Loading...</div></div>")
+
+            resetFormElement($(".file-field"));
+        })
+        function resetFormElement(e) {
+            e.wrap('<form>').closest('form').get(0).reset();
+            e.unwrap();
+
+            // Prevent form submission
+        }
 
         function uploadImage() {
 
@@ -104,10 +184,16 @@
                 contentType: false, // Set content type to false as jQuery will tell the server its a query string request
                 success: function(data, textStatus, jqXHR)
                 {
+                    
                     if(typeof data.error === 'undefined')
                     {
+                        if (data.file === 'undefined') {
+                            //do nothing
+                            $(".container").html("<div class='row result center'> <h1> There has been an error in processing your gif!  </h1> </div>")
+                            return;
+                        }
                         // Success so call function to process the form
-                        submitForm(event, data);
+                        $(".container").html("<div class='row result'><img class='res col s12 l12'  src='" + data.file + "'></img></div>" )
                     }
                     else
                     {

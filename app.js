@@ -46,7 +46,10 @@ app.post('/upload', upload.single('image'), function (req, res, next) {
             console.log(err);
         }
         // results is an array consisting of messages collected during execution
-        console.log('results: %j', results);
+        fileID = results[0];
+
+        // want to send a response of the link here
+        res.send({"file":'/gifs/'+fileID + ".gif"})
     });
 
 });
