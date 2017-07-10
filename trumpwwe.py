@@ -48,7 +48,7 @@ def main():
 
     readj_points = {116: (284,176, 50, 50),  148: (285, 199, 30,30)}
 
-    kargs =  {"duration" : .05}
+    kargs =  {"duration" : .09}
     frame_count = 0
     with imageio.get_writer('./public/gifs/'+id +'.gif', mode='I', **kargs) as writer:
         for filename in sorted(os.listdir("./frames"))[1:]:
