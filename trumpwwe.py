@@ -22,6 +22,7 @@ def main():
     # Read video
     # video = cv2.VideoCapture("vid1.mp4")
 
+
     # Exit if video not opened.
     # if not video.isOpened():
     #     print("Could not open video")

@@ -1,9 +1,4 @@
 .idea/
-movie.gif
 venv/
 uploads/
-public/
 node_modules/
-.vagrant/
-Vagrantfile
-ubuntu-xenial-16.04-cloudimg-console.log
