@@ -18,7 +18,7 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #18BC9C;
+  color: #337ab7;
 }
 h1,
 h2,
@@ -94,7 +94,7 @@ header .intro-text .skills {
     padding-bottom: 100px;
   }
   header .intro-text .name {
-    font-size: 4.75em;
+    font-size: 4.0em;
   }
   header .intro-text .skills {
     font-size: 1.75em;
@@ -179,7 +179,10 @@ section h2 {
   font-size: 3em;
 }
 section.success {
-  background: #18BC9C;
+  background: #FFFFFF;
+}
+section.success1 {
+  background: #0052A5;
   color: white;
 }
 @media (max-width: 767px) {
@@ -316,7 +319,7 @@ footer .footer-below {
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-  color: #18BC9C;
+  color: #0052A5;
   background: white;
   border: solid 2px white;
 }
