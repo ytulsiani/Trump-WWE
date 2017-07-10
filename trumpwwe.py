@@ -16,7 +16,7 @@ def main():
     #MEDIANFLOW seems to be the fastest and most accurate for occlusions of dude's face
     tracker = cv2.Tracker_create("MEDIANFLOW")
     # Read video
-    video = cv2.VideoCapture("vid1.avi")
+    video = cv2.VideoCapture("vid1.mp4")
 
     # Exit if video not opened.
     if not video.isOpened():

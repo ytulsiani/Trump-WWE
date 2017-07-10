@@ -10,7 +10,8 @@ var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
 var fs = require('fs');
 var PythonShell = require('python-shell');
-app.use(express.static('public'))
+app.use(express.static('public'));
+
 
 //Auth ----
 var storage = multer.diskStorage({
