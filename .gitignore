@@ -2,7 +2,6 @@
 movie.gif
 venv/
 uploads/
-public/
 node_modules/
 .vagrant/
 Vagrantfile
