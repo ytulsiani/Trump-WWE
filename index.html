@@ -53,17 +53,20 @@
 
 
     <!-- Upload Section -->
-    <section class="success" id="about">
-        <div class="container">
+    <section class="success" id="upload">
+        <div class="upload_container container">
+          <div class = "row result">
+
+          </div>
+
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>Upload Video</h2>
                     <hr class="star-light">
                 </div>
             </div>
-            <div class="container main">
           	<div class="row upload">
-              <div class="section col s12 l4 offset-l4">
+              <div class="col-lg-12 text-center">
                   <form action="#">
                       <div class="file-field input-field">
                       <div class="grey btn">
@@ -86,10 +89,6 @@
 
                       <a class="waves-effect waves-light grey btn-large col s12 l4 offset-l4 submitgif">Put it in the ring!</a>
 
-              </div>
-              <div class = "row result">
-
-              </div>
               </div>
         </div>
     </section>
@@ -163,7 +162,6 @@
     <script src="js/freelancer.min.js"></script>
 
 
-    <script src="js/init.js"></script>
     <!-- Code to handle file upload and gif processing -->
     <script>
 
@@ -173,7 +171,7 @@
         });
         $(".submitgif").click(function() {
             uploadImage();
-            $(".container").html("<div class='row upload'><div class='loader'>Loading...</div></div>")
+            $(".upload_container").html("<div class='row upload'><div class='loader'>Loading...</div></div>")
 
             resetFormElement($(".file-field"));
         })
@@ -207,11 +205,11 @@
                     {
                         if (data.file === 'undefined') {
                             //do nothing
-                            $(".container").html("<div class='row result center'> <h1> There has been an error in processing your gif!  </h1> </div>")
+                            $(".upload_container").html("<div class='row result center'> <h1> There has been an error in processing your gif!  </h1> </div>")
                             return;
                         }
                         // Success so call function to process the form
-                        $(".container").html("<div class='row result'><img class='res col s12 l12'  src='" + data.file + "'></img></div>" )
+                        $(".upload_container").html("<div class='row result'><img class='res col s12 l12'  src='" + data.file + "'></img></div>" )
                     }
                     else
                     {
