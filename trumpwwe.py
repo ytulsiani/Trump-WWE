@@ -22,7 +22,6 @@ def main():
     # Read video
     # video = cv2.VideoCapture("vid1.mp4")
 
-
     # Exit if video not opened.
     # if not video.isOpened():
     #     print("Could not open video")
@@ -47,12 +46,12 @@ def main():
     # Initialize tracker with first frame and bounding box
     ok = tracker.init(frame, bbox)
 
-    readj_points = {116: (284,176, 50, 50),  148: (285, 199, 40,40)}
+    readj_points = {116: (284,176, 50, 50),  148: (285, 199, 30,30)}
 
-    kargs =  {"duration" : .08}
-    frame_count = 1
+    kargs =  {"duration" : .05}
+    frame_count = 0
     with imageio.get_writer('./public/gifs/'+id +'.gif', mode='I', **kargs) as writer:
-        for filename in sorted(os.listdir("./frames")):
+        for filename in sorted(os.listdir("./frames"))[1:]:
             frame = cv2.imread("./frames/" + filename)
             
             #readjust the tracker 
@@ -75,14 +74,15 @@ def main():
                 frame[y_coord:y_coord+resized_image.shape[0], x_coord: x_coord + resized_image.shape[1]] = resized_image
 
             #compress the image
-            frame = cv2.resize(frame, (320, 180))
+            frame = cv2.resize(frame, (420, 200))
             #write it to the gif 
-            if (frame_count % 2 == 1):
+            if (frame_count % 3 == 1):
                 writer.append_data(cv2.cvtColor(frame, cv2.COLOR_RGB2BGR))
             
 
 
             frame_count += 1
+
     print(id)
     #now we generate gif
 
