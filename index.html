@@ -16,6 +16,12 @@
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Bootstrap File input-->
+    <link href="css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+
+    <!--spinner CSS-->
+    <link href="css/spinner.css" rel="stylesheet">
+
     <!-- Theme CSS -->
     <link href="css/freelancer.css" rel="stylesheet">
 
@@ -67,28 +73,12 @@
             </div>
           	<div class="row upload">
               <div class="col-lg-12 text-center">
-                  <form action="#">
-                      <div class="file-field input-field">
-                      <div class="grey btn">
-                          <span>File</span>
-                          <input type="file">
-                      </div>
-                      <!--<div >
-                          <input type="file"></input>
-                      </div>-->
-                      <div class="file-path-wrapper">
-                          <input class="file-path validate" type="text">
-                      </div>
 
-                      </div>
-                  </form>
+                  <label class="control-label">Select Image</label>
+                  <input id="input-1" type="file" class="file" data-allowed-file-extensions='["jpg", "png"]'>
+
 
               </div>
-              </div>
-              <div class="row submit">
-
-                      <a class="waves-effect waves-light grey btn-large col s12 l4 offset-l4 submitgif">Put it in the ring!</a>
-
               </div>
         </div>
     </section>
@@ -127,9 +117,9 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Made with &hearts; by <a target="_blank" href="https://www.github.com/VarunRamachandr">
-                        Varun Ramachandran</a> and <a target="_blank" href="http://www.ytulsiani.com">
-                        Yash Tulsiani</a>. This project is open source on
+                        Made with &hearts; by <a target="_blank" href="http://www.ytulsiani.com">
+                        Yash Tulsiani</a> and <a target="_blank" href="https://www.github.com/VarunRamachandr">
+                        Varun Ramachandran</a> . This project is open source on
                         <a target="_blank" href="https://www.github.com/ytulsiani/Trump-WWE">Github</a>.
                     </div>
                 </div>
@@ -151,6 +141,9 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
+    <!-- file input Javascript -->
+    <script src="js/fileinput.min.js"></script>
+
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
@@ -164,29 +157,31 @@
 
     <!-- Code to handle file upload and gif processing -->
     <script>
+        $(document).ready(function() {
+            $("#input-1").fileinput();
+
+            $(".fileinput-upload-button").click(function() {
+                uploadImage();
+                $(".upload_container").html("<div class='row upload'><div class='loader'>Loading...</div></div>")
+            })
+
+        });
+
 
          $(".file-field input[type=file]").first().change(function() {
 
             return null;
         });
-        $(".submitgif").click(function() {
-            uploadImage();
-            $(".upload_container").html("<div class='row upload'><div class='loader'>Loading...</div></div>")
 
-            resetFormElement($(".file-field"));
-        })
-        function resetFormElement(e) {
-            e.wrap('<form>').closest('form').get(0).reset();
-            e.unwrap();
-
-            // Prevent form submission
-        }
+        
+       
 
         function uploadImage() {
 
            var formData = new FormData();
 
-            var img_file = $(".file-field input[type=file]")[0].files[0];
+           
+            var img_file = $("*[type=file]")[0].files[0];
 
             formData.append( 'image', img_file, img_file.name);
 
@@ -209,7 +204,7 @@
                             return;
                         }
                         // Success so call function to process the form
-                        $(".upload_container").html("<div class='row result'><img class='res col s12 l12'  src='" + data.file + "'></img></div>" )
+                        $(".upload_container").html("<div class='row result'><img class='res col-lg-12' src='" + data.file + "'></img></div>" )
                     }
                     else
                     {
