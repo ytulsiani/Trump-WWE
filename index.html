@@ -11,6 +11,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <meta property="og:url"                content="http://www.mauledbytrump.com/" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Trump WWE Meme Generator" />
+    <meta property="og:description"        content="Make gifs of Trump mauling things" />
+    <meta property="og:image"              content="https://ichef.bbci.co.uk/news/660/cpsprodpb/796E/production/_96768013_trumpcnnman.jpg" />
+
     <title>Trump WWE GIF Generator</title>
 
     <!-- Bootstrap Core CSS -->
@@ -173,14 +179,14 @@
             return null;
         });
 
-        
-       
+
+
 
         function uploadImage() {
 
            var formData = new FormData();
 
-           
+
             var img_file = $("*[type=file]")[0].files[0];
 
             formData.append( 'image', img_file, img_file.name);
